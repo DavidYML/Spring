@@ -2,6 +2,7 @@ package com.realdolmen.spring.service;
 
 import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.domain.Visitor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 public class PairiDaiza implements Zoo {
     private String name;
     private List<Animal> animals = new ArrayList<>();
+    @Autowired
+    private FoodDistributionService fds;
 
     // TODO fetch the FoodDistributionService
 
@@ -43,6 +46,13 @@ public class PairiDaiza implements Zoo {
     @Override
     public int countAnimals() {
         return animals.size();
+    }
+
+    @Override
+    public void feedAnimals() {
+
+        fds.feedAnimalsByType(this.animals);
+
     }
 
 

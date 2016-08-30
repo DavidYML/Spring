@@ -18,14 +18,21 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TestConfig.class)
 // TODO Select the right profile
+@ActiveProfiles("Test")
 public class ZooIntegrationTestCase {
 
     @Autowired
     private Zoo zoo;
 
+
     @Test
     public void shouldHaveAntwerpZooPropertiesFilledIn() {
         assertThat(zoo.getName(), is("Antwerp Zoo"));
+        assertThat(zoo.getTicketPrice(), is(50.0));
+        assertThat(zoo.getMaxAnimalCount(), is(5));
+        assertThat(zoo.getOwnerName(), is("John"));
+
+
         // TODO assert the Zoo values come from the test properties
     }
 }

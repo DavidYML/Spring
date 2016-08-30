@@ -11,6 +11,9 @@ import java.util.List;
 @Service
 public class FoodDistributionServiceImpl implements FoodDistributionService {
 
+    /**
+     *
+     */
     @Autowired
     private FoodRepository foodRepository;
 
