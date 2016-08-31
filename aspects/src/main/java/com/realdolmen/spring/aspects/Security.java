@@ -6,6 +6,10 @@ import java.util.Objects;
 
 // TODO: Turn the security class into a Spring AOP aspect
 public class Security {
+
+    public  Security () {
+
+    }
     // TODO: Create an advice that is capable of preventing an animal from trying to call zoo.releaseAnimal()
     // TODO: When any animal except Chimps try to escape, prevent it from happening (preventEscapeOf()
     // TODO: When a Chimp escapes, we need to sound the alert by throwing an EscapedAnimalException

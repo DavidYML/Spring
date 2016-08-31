@@ -7,6 +7,10 @@ import java.util.Objects;
 
 // TODO: Marketing must become a Spring AOP Aspect
 public class Marketing {
+
+    public Marketing () {
+
+    }
     private boolean campaignLaunched = false;
 
     // TODO: Add an advice that advices the zoo before new animals are added.
