@@ -11,7 +11,12 @@ public class Author {
     private String lastName;
      @Id
             @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    Integer id;
+
+    public Author(String firstName, String lastName, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public String getFirstName() {
         return firstName;

@@ -49,6 +49,7 @@ public class JpaConfig {
         public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
+        em.setPackagesToScan("com.realdolmen.spring.blog");
         // TODO Set packages to scan to the domain package
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();

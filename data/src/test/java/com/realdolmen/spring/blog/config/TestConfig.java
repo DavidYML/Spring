@@ -3,6 +3,7 @@ package com.realdolmen.spring.blog.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.test.context.TestPropertySource;
@@ -16,11 +17,12 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-@TestPropertySource
+@Profile("test")
+
 // TODO Enable transactions
 // TODO This is the test configuration
 // TODO Add a component scan
-@ComponentScan
+@ComponentScan(basePackages = "com.realdolmen.spring.blog")
 public class TestConfig {
 
     @Bean
